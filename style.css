@@ -23,10 +23,11 @@ body {
 /* CARD */
 .card {
     background: rgba(255, 255, 255, 0.18);
-    padding: 30px 20px;
+    padding: 50% 20px;
     border-radius: 24px;
     width: 90%;
-    max-width: 380px;
+    max-width: 780px;
+    max-height: 780px;
     text-align: center;
     backdrop-filter: blur(15px);
     animation: fadeIn 0.8s ease;
@@ -95,7 +96,7 @@ h2 {
 
 /* HERO GIF */
 .hero-gif {
-    width: 240px;
+    width: 340px;
     max-width: 100%;
     border-radius: 20px;
     margin-bottom: 15px;
@@ -153,47 +154,33 @@ h2 {
 }
 
 /* MOBILE OPTIMIZATION */
+/* MOBILE OPTIMIZATION — CLEAN VERSION */
+/* FULL SCREEN MOBILE CARD */
 @media (max-width: 480px) {
 
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+
     body {
-        min-height: 100vh;
+        display: block;          /* remove flex center */
         padding: 0;
     }
 
-    /* Make card large & centered */
     .card {
-        width: 92vw;              /* almost full width */
-        min-height: 70vh;         /* tall card */
-        padding: 40px 25px;
-        border-radius: 30px;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* Love text bigger */
-    .love {
-        font-size: 30px;
-        line-height: 1.4;
-        text-align: center;
-        margin: 20px 0;
-    }
-
-    /* GIFS bigger */
-    .hero-gif {
-        width: 85%;
-        max-width: 320px;
-        margin-bottom: 20px;
-    }
-
-    .love-gif {
-        width: 75%;
-        max-width: 260px;
-        margin-top: 15px;
+        width: 100%;
+        max-width: 100% !important;
+        height: 100vh;
+        min-height: 100vh;
+        border-radius: 0;
+        padding: 40px 24px;
+        margin: 0;
     }
 }
+
+
+
 
 
 
