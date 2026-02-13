@@ -1,11 +1,5 @@
-// let noCount = 0;
-// let name = "";
-
 let noCount = 0;
-
-// 👉 CHANGE NAME HERE
 let name = "My Love ❤️";
-
 
 const messages = [
     "Are you sure? 🥺",
@@ -13,24 +7,17 @@ const messages = [
     "Oh God… think deep 😭 I made this for you 💖"
 ];
 
-// function start() {
-//     name = document.getElementById("nameInput").value.trim();
-//     if (!name) {
-//         alert("Please enter your name 💕");
-//         return;
-//     }
-//     document.getElementById("step1").classList.add("hidden");
-//     document.getElementById("step2").classList.remove("hidden");
-//     document.getElementById("question").innerText =
-//         `Will you be my Valentine, ${name}? 💘`;
-// }
+document.body.classList.add("step1-bg");
+
 function start() {
     document.getElementById("step1").classList.add("hidden");
     document.getElementById("step2").classList.remove("hidden");
+
+    document.body.className = "step2-bg";
+
     document.getElementById("question").innerText =
         `Will you be my Valentine, ${name}? 💘`;
 }
-
 
 function noClick() {
     if (noCount < messages.length) {
@@ -44,15 +31,19 @@ function noClick() {
 function moveNoButton() {
     const btn = document.getElementById("noBtn");
     const x = Math.random() * 260 - 130;
-    const y = Math.random() * 220 - 110;
+    const y = Math.random() * 200 - 100;
     btn.style.transform = `translate(${x}px, ${y}px)`;
 }
 
 function yesClick() {
     document.getElementById("step2").classList.add("hidden");
     document.getElementById("final").classList.remove("hidden");
+
+    document.body.className = "final-bg";
+
     document.getElementById("loveText").innerText =
         `I Love You ❤️ Happy Valentine Day ${name}`;
+
     createHearts();
 }
 

@@ -1,6 +1,4 @@
-/* =========================
-   RESET
-========================= */
+/* RESET */
 * {
     box-sizing: border-box;
 }
@@ -11,46 +9,51 @@ html, body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* =========================
-   BODY — ALWAYS CENTER
-========================= */
+/* BODY */
 body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 16px;
-    background: radial-gradient(circle at top, #ff9a9e, #fad0c4);
     color: #fff;
+    background-size: cover;
+    background-position: center;
+    transition: background 0.8s ease;
 }
 
-/* =========================
-   CARD
-========================= */
+/* STEP BACKGROUNDS */
+body.step1-bg {
+    background-image: url("https://images.unsplash.com/photo-1517841905240-472988babdf9");
+}
+
+body.step2-bg {
+    background-image: url("https://images.unsplash.com/photo-1518895949257-7621c3c786d7");
+}
+
+body.final-bg {
+    background-image: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb");
+}
+
+/* CARD */
 .card {
     width: 92%;
     max-width: 520px;
-    padding: 30px 24px;
-    border-radius: 24px;
+    padding: 32px 24px;
+    border-radius: 28px;
     text-align: center;
-
-    background: rgba(255,255,255,0.18);
-    backdrop-filter: blur(16px);
-
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(15px);
     animation: fadeIn 0.7s ease;
 }
 
-/* Glow */
 .glow {
     box-shadow: 0 0 40px rgba(255,105,180,0.9);
 }
 
-/* =========================
-   TEXT
-========================= */
+/* TEXT */
 h2 {
     font-size: 24px;
-    margin-bottom: 10px;
 }
 
 .static-name {
@@ -59,43 +62,35 @@ h2 {
 }
 
 .love {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
-    margin: 16px 0;
-    animation: heartbeat 1.2s infinite;
+    margin: 18px 0;
+    animation: heartbeat 1.3s infinite;
 }
 
-/* =========================
-   IMAGES
-========================= */
+/* GIFS */
 .hero-gif {
     width: 100%;
-    max-width: 340px;
+    max-width: 320px;
     border-radius: 18px;
     margin: 12px 0;
     box-shadow: 0 0 30px hotpink;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS */
 .btn-group {
-    margin-top: 18px;
     display: flex;
-    gap: 12px;
+    gap: 14px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.main-btn,
-.no-btn {
-    min-width: 130px;
-    padding: 14px 24px;
+.main-btn, .no-btn {
+    padding: 14px 26px;
     border-radius: 30px;
     border: none;
     font-size: 16px;
     cursor: pointer;
-    transition: 0.25s ease;
 }
 
 .main-btn {
@@ -105,7 +100,6 @@ h2 {
 
 .main-btn:hover {
     transform: scale(1.08);
-    box-shadow: 0 0 25px rgba(255,77,109,1);
 }
 
 .no-btn {
@@ -113,51 +107,54 @@ h2 {
     color: #fff;
 }
 
-/* =========================
-   UTIL
-========================= */
+/* UTIL */
 .hidden {
     display: none;
 }
 
-/* =========================
-   ANIMATIONS
-========================= */
+/* HEARTS */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 20px;
+    animation: floatUp 5s linear;
+    pointer-events: none;
+}
+
+/* ANIMATIONS */
 @keyframes fadeIn {
-    from { opacity:0; transform:translateY(20px); }
-    to { opacity:1; transform:translateY(0); }
+    from { opacity:0; transform: translateY(20px); }
+    to { opacity:1; transform: translateY(0); }
 }
 
 @keyframes heartbeat {
-    0% { transform:scale(1); }
-    50% { transform:scale(1.15); }
-    100% { transform:scale(1); }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
 }
 
-/* =========================
-   MOBILE TUNING
-========================= */
-@media (max-width: 480px) {
-
-    body {
-        padding: 12px;
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
     }
+}
 
+/* MOBILE */
+@media (max-width: 480px) {
     .card {
         width: 100%;
-        max-width: 420px;
-        padding: 26px 18px;
+        padding: 30px 18px;
     }
 
-    h2 { font-size: 20px; }
-    .love { font-size: 24px; }
+    h2 { font-size: 22px; }
+    .love { font-size: 26px; }
 
     .btn-group {
         flex-direction: column;
     }
 
-    .main-btn,
-    .no-btn {
+    .main-btn, .no-btn {
         width: 100%;
     }
 
